@@ -1,205 +1,162 @@
+<h1 align="center">🤖 AI JobMatch – Your Smart Job-Hunting Agent</h1>
 
-
----
-
-```markdown
-# Resume vs Job Description Analyzer
-
-A smart AI-powered tool that analyzes a job description and provides a breakdown of key 
-requirements such as technical skills, soft skills, experience, and more. This tool is 
-intended to help job seekers quickly understand how well a job fits their profile and what 
-they need to improve in their resumes.
+<p align="center">
+A fully autonomous AI-powered web app that scans resumes, analyzes job descriptions, and finds the best opportunities for you — even applies on your behalf.
+</p>
 
 ---
 
-## 🚀 Project Overview
+## ✨ Key Features
 
-This app leverages the power of [LangChain](https://www.langchain.com/) and OpenAI's 
-GPT models to:
+🔍 **Resume Analyzer**  
+Upload your resume and let our AI extract key information like skills, experience, education, and certifications.
 
-- Parse any job description.
-- Extract critical job requirements:
-  - Technical Skills
-  - Soft Skills
-  - Years of Experience
-  - Educational Background
-  - Demographic Preferences (if any)
-  - Keywords for resume tailoring
-- Provide actionable insights that job seekers can use to update or customize their 
-resumes for better alignment.
-- As our team have requested Real data with platforms like naukari.com and linked.in 
-to come up with a more alligned open source model 
-- once we will have them we will train our own model on cloud infrastructure (GCP).
----
+🧠 **JD Intelligence**  
+Paste any job description or URL — our system uses LLMs to extract job requirements and calculate a **fit score** against your resume.
 
-## 🧠 How It Works
+📊 **Apply Score Engine**  
+Get personalized feedback:
+- Matching technical & soft skills
+- Missing requirements
+- Suggestions to improve your profile
 
-Under the hood, this app uses:
+🎯 **Autonomous Job Feed (Coming Soon)**  
+Aggregates jobs from **Naukri**, **LinkedIn**, **Indeed**, and more, showing only the best-fit roles.
 
-- `LangChain` for prompt management and chaining.
-- `OpenAI GPT` model via `langchain_openai.ChatOpenAI` Just for now future plans are to 
-come up with some dedicated models.
-- A custom prompt template to extract structured data from natural language job descriptions.
+🤖 **Auto-Apply Agent (Coming Soon)**  
+A powerful AI agent that applies for jobs on your behalf after optimizing your resume and cover letter.
 
 ---
 
-## 📂 Project Structure
+## 🧩 How It Works
 
-```
+1. **Upload Resume (PDF/DOCX)**
+   - AI extracts structured profile info using NLP + LangChain
 
-resume-vs-jd-analyzer/
-│
-├── main.py                # Main Python script to analyze job descriptions
-├── requirements.txt       # List of dependencies
-├── README.md              # Project documentation (this file)
-└── .gitignore             # (optional) Git ignore file
+2. **Provide Job Description or Link**
+   - JD parsed by LLM
+   - System calculates Apply Score & shows what you’re missing
 
-```
+3. **Add or Improve Profile Details**
+   - Add missing skills, certifications, or projects to boost fit
 
----
+4. **See Live Job Feed**
+   - Jobs pulled from top job sites using scrapers/APIs
+   - Personalized to your profile + score
 
-## 📄 Sample Output
-
-Given the following job description:
-
-> Carry out on-site installation, configuration, and testing of XDR, SIEM, DLP, SOAR...  
-> Required Qualifications and Experience:
-> - Diploma/Bachelor's Degree in Computer Science...
-> - 1–5 years of experience...
-> - Sound knowledge of networking...
-
-The tool will return output like:
-
-```
-
-1. Technical skills required:
-
-   * XDR, SIEM, DLP, SOAR
-   * Networking (routing, switching, firewalls, VPN)
-   * Operating systems (Windows/Linux)
-
-2. Soft skills required:
-
-   * Troubleshooting
-   * Communication
-   * Coordination with teams
-
-3. Years of experience:
-
-   * 1–5 years
-
-4. Educational background:
-
-   * Diploma/Bachelor’s in Computer Science, IT, Electronics
-
-5. Demographic preferences:
-
-   * Not specified
-
-6. Important keywords for a strong resume:
-
-   * Endpoint security
-   * Root cause analysis
-   * Deployment
-
-````
+5. **Enable Auto-Apply Agent** *(optional)*
+   - Applies to jobs with high confidence
+   - Tracks applications and responses
 
 ---
 
-## 🛠 Installation & Setup
+## 🛠️ Tech Stack
 
-### 1. Clone the repository
+| Layer         | Tech Used                                   |
+|---------------|---------------------------------------------|
+| **Frontend**  | ReactJS, Tailwind CSS                       |
+| **Backend**   | Python (FastAPI or Flask)                   |
+| **AI/NLP**    | LangChain, OpenAI GPT-4, Resume Parsers     |
+| **Database**  | PostgreSQL / MongoDB                        |
+| **Storage**   | AWS S3 / Local FS                           |
+| **Agents**    | LangGraph + RAG + Prompt Engineering        |
+| **Job Feeds** | Naukri.com, Indeed, LinkedIn (Scraping/APIs)|
 
-```bash
-git clone https://github.com/yourusername/resume-vs-jd-analyzer.git
-cd resume-vs-jd-analyzer
-````
+---
 
-### 2. Create a virtual environment
+## 📌 Example Output
 
-```bash
+**Input Resume + Job Description ➜ Result:**
+
+```yaml
+Apply Score: 78%
+Matched Skills:
+  - ✅ Network Security
+  - ✅ SIEM, DLP, SOAR
+Missing Elements:
+  - ❌ Certifications: CompTIA Security+, CEH
+  - ❌ Soft Skill: Stakeholder Communication
+
+Suggestions:
+  • Add certification section to resume
+  • Mention experience with troubleshooting tools
+
+🧪 Local Setup
+1. Clone the repo
+
+git clone https://github.com/yourusername/ai-jobmatch.git
+cd ai-jobmatch
+
+2. Create a virtual environment
+
 python3 -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-```
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 
-### 3. Install dependencies
+3. Install dependencies
 
-```bash
 pip install -r requirements.txt
-```
 
-Create a `requirements.txt` file if not present, with:
+4. Add OpenAI API key
 
-```
-langchain
-openai
-```
+Set your environment variable:
 
-### 4. Set your OpenAI API key
+export OPENAI_API_KEY="sk-..."  # or use .env
 
-You can either:
+🚧 Roadmap
 
-* Replace the key in `main.py` directly (**not recommended for production**)
-* Or use environment variables (**recommended**):
+Resume parser & JD analyzer
 
-```bash
-export OPENAI_API_KEY="sk-..."
-```
+Apply score & suggestion engine
 
-Then, update the code:
+Resume improvement assistant
 
-```python
-import os
-openai_api_key=os.getenv("OPENAI_API_KEY")
-```
+Web interface (React + FastAPI)
 
----
+Live job scraping from job sites
 
-## ▶️ Usage
+AI agent for automatic applications
 
-Run the script:
+    Job tracker dashboard
 
-```bash
-python main.py
-```
+📣 Our Unique Value
 
-You can customize the job description directly in `main.py` under the `sample_jd` variable.
+Unlike traditional job boards or resume builders:
 
----
+✅ We don’t just show jobs — we rank them by fit.
+✅ We don’t just review resumes — we fix and apply for you.
+✅ We create your AI Career Companion.
+🤝 Contributing
 
-## 🧩 Future Improvements
+We welcome contributors for:
 
-* ✅ Match resume against job description and return percentage fit
-* 🔜 Web interface for uploading resume and JD
-* 🔜 Visual dashboard showing fit metrics and suggestions
-* 🔜 Resume generator or improvement suggestions
-* 🔒 Secure handling of API keys and rate limits
-* 📝 Export results to PDF or Markdown
+    AI prompt engineering
 
----
+    Frontend/backend dev
 
-## 🤝 Contributing
+    Job site integrations
 
-Pull requests are welcome! Please fork the repo and submit a PR.
+    Resume parsing logic
 
----
+    Testing & QA
 
-## 📜 License
+git checkout -b feature/my-new-feature
 
-[MIT License](LICENSE)
+📜 License
+
+Licensed under the MIT License — see LICENSE.
+💬 Contact
+
+Made with ❤️ by [Your Name]
+📧 you@example.com
+🌐 your-portfolio.com
+
 
 ---
 
-## ✨ Acknowledgments
+Would you like me to help you:
 
-* [LangChain](https://www.langchain.com/)
-* [OpenAI](https://openai.com/)
+- Set up a basic FastAPI + React skeleton for this?
+- Add a logo or brand name idea?
+- Create a sample landing page UI (HTML/CSS/React)?
 
-```
-
----
-
-Would you like me to also generate the `requirements.txt` and `.gitignore` files, or even help you set 
-this up as a Streamlit app or Flask API for web usage?
-```
+Let me know and I’ll continue!
