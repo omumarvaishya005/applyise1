@@ -5,13 +5,17 @@
 ```markdown
 # Resume vs Job Description Analyzer
 
-A smart AI-powered tool that analyzes a job description and provides a breakdown of key requirements such as technical skills, soft skills, experience, and more. This tool is intended to help job seekers quickly understand how well a job fits their profile and what they need to improve in their resumes.
+A smart AI-powered tool that analyzes a job description and provides a breakdown of key 
+requirements such as technical skills, soft skills, experience, and more. This tool is 
+intended to help job seekers quickly understand how well a job fits their profile and what 
+they need to improve in their resumes.
 
 ---
 
 ## 🚀 Project Overview
 
-This app leverages the power of [LangChain](https://www.langchain.com/) and OpenAI's GPT models to:
+This app leverages the power of [LangChain](https://www.langchain.com/) and OpenAI's 
+GPT models to:
 
 - Parse any job description.
 - Extract critical job requirements:
@@ -21,8 +25,10 @@ This app leverages the power of [LangChain](https://www.langchain.com/) and Open
   - Educational Background
   - Demographic Preferences (if any)
   - Keywords for resume tailoring
-- Provide actionable insights that job seekers can use to update or customize their resumes for better alignment.
-- As a team we have requested Real data with platforms like naukari.com and linked.in to come up with a more alligned open source model 
+- Provide actionable insights that job seekers can use to update or customize their 
+resumes for better alignment.
+- As our team have requested Real data with platforms like naukari.com and linked.in 
+to come up with a more alligned open source model 
 - once we will have them we will train our own model on cloud infrastructure (GCP).
 ---
 
@@ -31,7 +37,8 @@ This app leverages the power of [LangChain](https://www.langchain.com/) and Open
 Under the hood, this app uses:
 
 - `LangChain` for prompt management and chaining.
-- `OpenAI GPT` model via `langchain_openai.ChatOpenAI` Just for now future plans are to come up with some dedicated models.
+- `OpenAI GPT` model via `langchain_openai.ChatOpenAI` Just for now future plans are to 
+come up with some dedicated models.
 - A custom prompt template to extract structured data from natural language job descriptions.
 
 ---
@@ -193,5 +200,6 @@ Pull requests are welcome! Please fork the repo and submit a PR.
 
 ---
 
-Would you like me to also generate the `requirements.txt` and `.gitignore` files, or even help you set this up as a Streamlit app or Flask API for web usage?
+Would you like me to also generate the `requirements.txt` and `.gitignore` files, or even help you set 
+this up as a Streamlit app or Flask API for web usage?
 ```
