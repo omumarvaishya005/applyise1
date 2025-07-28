@@ -81,26 +81,6 @@ Suggestions:
   • Add certification section to resume
   • Mention experience with troubleshooting tools
 
-🧪 Local Setup
-1. Clone the repo
-
-git clone https://github.com/yourusername/ai-jobmatch.git
-cd ai-jobmatch
-
-2. Create a virtual environment
-
-python3 -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
-3. Install dependencies
-
-pip install -r requirements.txt
-
-4. Add OpenAI API key
-
-Set your environment variable:
-
-export OPENAI_API_KEY="sk-..."  # or use .env
 
 🚧 Roadmap
 
@@ -141,22 +121,14 @@ We welcome contributors for:
 
 git checkout -b feature/my-new-feature
 
-📜 License
 
-Licensed under the MIT License — see LICENSE.
 💬 Contact
 
-Made with ❤️ by [Your Name]
-📧 you@example.com
-🌐 your-portfolio.com
+Made with ❤️ by omumarvaishya
+📧 omvaishya1999@gmail.com
+🌐 main nhi bataunga 
 
 
 ---
 
-Would you like me to help you:
 
-- Set up a basic FastAPI + React skeleton for this?
-- Add a logo or brand name idea?
-- Create a sample landing page UI (HTML/CSS/React)?
-
-Let me know and I’ll continue!
